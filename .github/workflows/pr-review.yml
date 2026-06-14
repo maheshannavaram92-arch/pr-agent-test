@@ -3,10 +3,6 @@ name: PR Review
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-  pull_request_review_comment:
-    types: [created]
-  issue_comment:
-    types: [created]
 
 jobs:
   pr-agent:
@@ -16,4 +12,7 @@ jobs:
       auto_improve: true
       auto_review: true
       feedback: true
-    secrets: inherit
+    secrets:
+      APP_ID: ${{ secrets.APP_ID }}                              # ← explicit passing
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      PR_AGENT_WRAPPER_PRIVATE_KEY: ${{ secrets.PR_AGENT_WRAPPER_PRIVATE_KEY }}
