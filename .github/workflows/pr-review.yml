@@ -13,6 +13,6 @@ jobs:
       auto_review: true
       feedback: true
     secrets:
-      APP_ID: ${{ secrets.APP_ID }}                              # ← explicit passing
+      APP_ID: ${{ secrets.APP_ID }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       PR_AGENT_WRAPPER_PRIVATE_KEY: ${{ secrets.PR_AGENT_WRAPPER_PRIVATE_KEY }}
