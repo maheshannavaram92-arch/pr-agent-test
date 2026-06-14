@@ -1,0 +1,19 @@
+name: PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  pull_request_review_comment:
+    types: [created]
+  issue_comment:
+    types: [created]
+
+jobs:
+  pr-agent:
+    uses: maheshannavaram92-arch/pr-review-workflows/.github/workflows/pr-agent.yml@main
+    with:
+      auto_describe: true
+      auto_improve: true
+      auto_review: true
+      feedback: true
+    secrets: inherit
